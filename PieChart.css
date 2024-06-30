@@ -1,0 +1,10 @@
+.chart-container {
+    width: 25%; /* 25% width for the first quarter of the page */
+    height: 300px; /* Set a fixed height */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+  }
+  
