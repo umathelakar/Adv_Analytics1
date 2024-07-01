@@ -77,4 +77,56 @@
 }
 
 
-  
+/////////////////////////////////////////////////////////////////////////////////////
+
+/* AdvisorAnalytics.css */
+.advisor-analytics {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensure full viewport height */
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.year-filter {
+  margin: 10px;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* Avoid scrolling */
+}
+
+.left-sidebar {
+  width: 30%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  overflow-y: auto; /* Allow scrolling within the sidebar if needed */
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden; /* Avoid scrolling */
+}
+
+.top-section {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* Avoid scrolling */
+}
+
+.pie-chart, .us-map, .bar-graph {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow-y: auto; /* Allow scrolling within these sections if needed */
+}
+
