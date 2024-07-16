@@ -1,0 +1,233 @@
+Navbar with user icon (on hover-display name)
+
+App.jsx
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Dashboard from './components/Dashboard';
+import AdvisorAnalytics from './components/AdvisorAnalytics';
+import AdvisorMetrics from './components/AdvisorMetrics';
+import Login from './components/Login';
+
+const App = () => {
+  const loggedInUserName = 'John Doe'; // This would be dynamically set based on the logged-in user
+
+  return (
+    <Router>
+      <Navbar userName={loggedInUserName} />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/advisor-analytics" element={<AdvisorAnalytics />} />
+        <Route path="/advisor-metrics" element={<AdvisorMetrics />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
+
+
+
+Navbar.jsx
+
+import React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
+import PersonIcon from '@mui/icons-material/Person';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
+import Tooltip from '@mui/material/Tooltip';
+import './Navbar.css';
+
+const Navbar = ({ userName }) => {
+  return (
+    <AppBar position="static" className="custom-navbar">
+      <Toolbar className="navbar-toolbar">
+        <Box className="navbar-logo">
+          <Typography variant="h6" component="div">
+            <LocationCityIcon className="company-logo-icon" />
+            Company Name
+          </Typography>
+        </Box>
+        <Box className="navbar-links">
+          <ul className="navbar-list">
+            <li className="navbar-list-item">
+              <Link to="/">Dashboard</Link>
+            </li>
+            <li className="navbar-list-item">
+              <Link to="/advisor-analytics">Advisor Analytics</Link>
+            </li>
+            <li className="navbar-list-item">
+              <Link to="/advisor-metrics">Advisor Metrics</Link>
+            </li>
+            <li className="navbar-list-item">
+              <Link to="/login">Login</Link>
+            </li>
+            <li className="navbar-list-item">
+              <Tooltip title={userName} arrow>
+                <PersonIcon className="user-icon" sx={{ fontSize: 30 }} />
+              </Tooltip>
+            </li>
+          </ul>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default Navbar;
+
+
+
+Navbar.css
+
+.custom-navbar {
+    background-color: goldenrod !important; /* Green color */
+  }
+  
+  .navbar-toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .company-logo-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-list {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .navbar-list-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-list-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .user-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    color: white;
+  }
+
+
+
+
+AdvisorAnalytics.jsx
+
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+
+const AdvisorAnalytics = () => {
+  return (
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Advisor Analytics
+      </Typography>
+      <Typography variant="body1">
+        Welcome to the Advisor Analytics page. Here you can find detailed analytics about advisors.
+      </Typography>
+    </Container>
+  );
+};
+
+export default AdvisorAnalytics;
+
+
+
+
+AdvisorMetrics.jsx
+
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+
+const AdvisorMetrics = () => {
+  return (
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Advisor Metrics
+      </Typography>
+      <Typography variant="body1">
+        Welcome to the Advisor Metrics page. Here you can find performance metrics for advisors.
+      </Typography>
+    </Container>
+  );
+};
+
+export default AdvisorMetrics;
+
+
+
+
+Login.jsx
+
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+
+const Login = () => {
+  return (
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Login
+      </Typography>
+      <Typography variant="body1">
+        Welcome to the Login page. Please login to access your account.
+      </Typography>
+    </Container>
+  );
+};
+
+export default Login;
+
+
+
+Dashboard.jsx
+
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+
+const Dashboard = () => {
+  return (
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Dashboard
+      </Typography>
+      <Typography variant="body1">
+        Welcome to the Dashboard page. Here you can find an overview of your data.
+      </Typography>
+    </Container>
+  );
+};
+
+export default Dashboard;
