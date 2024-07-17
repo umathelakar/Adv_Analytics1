@@ -1,9 +1,9 @@
 WIMT ADVISOR ANALYTICS
 
 Process Flow:
-1. Formulating use cases: From the given problem statement, we have formulated many use cases and filtered them to obtain few use cases
-2. Preparing SRS and UI: From the use cases, we have made the SRS and decided the UI for our project
-3. Building graph data model: we have chosen Neo4j as graph database
+1. Formulating use cases: From the given problem statement, we have formulated various use cases and filtered among those to obtain certain use cases
+2. Preparing SRS and UI: From these use cases, we have prepared the SRS and decided the UI for our project
+3. Building graph data model: we have chosen Neo4j to build our database model
 4. Visual components creation: developed responsive visual components for user interface
 5. Backend API development: set up backend framework and implemented API endpoints
 6. End to End integration: integrated frontend and backend to ensure the system works as a cohesive unit.
@@ -31,20 +31,20 @@ Tech Stacks Used:
 Data Model: 
 	-> this is the complete data model of our project.
 	-> the first batch has made the model for customer side
-	-> we have further extended the data model by including advisor node with rep code and advisor details as the attributes
-	-> the hops take place from advisor to parties to accounts and then to products.
+	-> we have further extended the data model by including advisor side nodes (with rep code and advisor details as the attributes)
+	-> flow of the hops take place from advisor to parties to accounts and then to products.
 
 Entitlements:
 	We have two roles through which a person can access
 	Whatever we have shown till now is from the Super Admin role.
 	Super admin has access to all the pages of the application
-	The second way is from advisor view
+	The second role is of an advisor
 	An advisor logs in using the unique id and password
 		-> In the dashboard page, the advisor can view only his peer advisors' details
 		-> The metrics page is restricted to the advisor
 		-> There are no hyperlinks in the customer distribution map as there is no access for the advisor to view the advisor metrics page
 
-		-> In the advisor analytics page, the details of the advisor who logged in will be displayed
+		-> In the advisor analytics page, the details of the advisor who logged in will be displayed along with his customer details
 		-> When any other peer advisor is searched, customer details of that advisor is restricted and node graph for that advisor cannot be accessed.
 
 	These are the Entitlements made in our project.
