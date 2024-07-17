@@ -1,0 +1,200 @@
+WIMT ADVISOR ANALYTICS
+
+Process Flow:
+1. Formulating use cases: From the given problem statement, we have formulated many use cases and filtered them to obtain few use cases
+2. Preparing SRS and UI: From the use cases, we have made the SRS and decided the UI for our project
+3. Building graph data model: we have chosen Neo4j as graph database
+4. Visual components creation: developed responsive visual components for user interface
+5. Backend API development: set up backend framework and implemented API endpoints
+6. End to End integration: integrated frontend and backend to ensure the system works as a cohesive unit.
+
+
+Tech Stacks Used:
+
+1. Neo4j:Reasons for choosing Neo4j
+	-> ideal for modeling and managing relationships between advisor, customers, accounts and products 
+	-> easier and faster to work with complex relationships and heirarchies
+	-> As Neo4j has a Schema less design, it is highly flexible that is it is easy to modify the data model
+	-> provides real time insights into advisor-customer relationships
+
+2. React js for frontend:
+	-> has component based architecture and allows to build modular, reusable UI components
+	-> ensures application remains responsive even with large datasets and frequent updates
+	-> has rich ecosystem of libraries for better visualization (like material UI)
+
+3. Flask for backend:
+	-> lightweight and flexible python framework
+	-> allows us to easily build RESTful APIs to interact with Neo4j
+	-> handles increasing user loads and data volumes as application grows
+
+
+Data Model: 
+	-> this is the complete data model of our project.
+	-> the first batch has made the model for customer side
+	-> we have further extended the data model by including advisor node with rep code and advisor details as the attributes
+	-> the hops take place from advisor to parties to accounts and then to products.
+
+Entitlements:
+	We have two roles through which a person can access
+	Whatever we have shown till now is from the Super Admin role.
+	Super admin has access to all the pages of the application
+	The second way is from advisor view
+	An advisor logs in using the unique id and password
+		-> In the dashboard page, the advisor can view only his peer advisors' details
+		-> The metrics page is restricted to the advisor
+		-> There are no hyperlinks in the customer distribution map as there is no access for the advisor to view the advisor metrics page
+
+		-> In the advisor analytics page, the details of the advisor who logged in will be displayed
+		-> When any other peer advisor is searched, customer details of that advisor is restricted and node graph for that advisor cannot be accessed.
+
+	These are the Entitlements made in our project.
+
+
+
+
+
+
+
+
+
+
+WIMT ADVISOR ANALYTICS
+
+Process Flow:
+1. Formulating use cases: From the given problem statement, we have formulated many use cases and filtered them to obtain few use cases
+2. Preparing SRS and UI: From the use cases, we have made the SRS and decided the UI for our project
+3. Building graph data model: we have chosen Neo4j as graph database
+4. Visual components creation: developed responsive visual components for user interface
+5. Backend API development: set up backend framework and implemented API endpoints
+6. End to End integration: integrated frontend and backend to ensure the system works as a cohesive unit.
+
+
+Tech Stacks Used:
+
+1. Neo4j:Reasons for choosing Neo4j
+	-> ideal for modeling and managing relationships between advisor, customers, accounts and products 
+	-> easier and faster to work with complex relationships and heirarchies
+	-> As Neo4j has a Schema less design, it is highly flexible that is it is easy to modify the data model
+	-> provides real time insights into advisor-customer relationships
+
+2. React js for frontend:
+	-> has component based architecture and allows to build modular, reusable UI components
+	-> ensures application remains responsive even with large datasets and frequent updates
+	-> has rich ecosystem of libraries for better visualization (like material UI)
+
+3. Flask for backend:
+	-> lightweight and flexible python framework
+	-> allows us to easily build RESTful APIs to interact with Neo4j
+	-> handles increasing user loads and data volumes as application grows
+
+
+Data Model: 
+	-> this is the complete data model of our project.
+	-> the first batch has made the model for customer side
+	-> we have further extended the data model by including advisor node with rep code and advisor details as the attributes
+	-> the hops take place from advisor to parties to accounts and then to products.
+
+Entitlements:
+	We have two roles through which a person can access
+	Whatever we have shown till now is from the Super Admin role.
+	Super admin has access to all the pages of the application
+	The second way is from advisor view
+	An advisor logs in using the unique id and password
+		-> In the dashboard page, the advisor can view only his peer advisors' details
+		-> The metrics page is restricted to the advisor
+		-> There are no hyperlinks in the customer distribution map as there is no access for the advisor to view the advisor metrics page
+
+		-> In the advisor analytics page, the details of the advisor who logged in will be displayed
+		-> When any other peer advisor is searched, customer details of that advisor is restricted and node graph for that advisor cannot be accessed.
+
+	These are the Entitlements made in our project.
+Now i will handover to my team mate to explain the future scope and provide conclusion for our project.
+
+
+Advantages of Neo4j:
+
+1. Native graph structure: 
+.designed from the ground up to store and process graph data efficiently
+.naturally represents entities (nodes) and relationships (edges) between them
+.easier and faster to work with complex relationships and hierarchies.
+
+2. Performance:
+.Traversing relationships in a graph is generally faster than using joins in relational databases
+.complexity of relationships increases in relational databases
+
+3. Flexibility and Schema-less Design: 
+.Neo4j has a schema-less design
+.easy to modify data model(flexible)
+
+4. Relationships as First-Class Citizens: 
+.In Neo4j, relationships are treated as first-class citizens, meaning they have properties and can carry metadata. This allows for rich modeling of relationships between entities, which is often a core requirement in applications dealing with social networks, recommendation engines, fraud detection, and more.
+
+5. Traversal and Pathfinding: 
+.Graph databases excel in pathfinding algorithms, such as shortest path, pattern matching, and graph traversal. These capabilities are crucial in scenarios where understanding and navigating the connections between entities are essential.
+
+6. Scalability: 
+.Neo4j supports horizontal scalability through clustering, allowing you to distribute your graph across multiple machines and handle large datasets and high transaction volumes.
+
+7. Natural Representation of Domain Models: 
+.Many real-world domains naturally map to graphs, such as social networks, logistics, recommendation systems, and fraud detection. Neo4j's ability to model and query these relationships directly reflects the real-world scenarios more accurately.
+
+8. Community and Ecosystem: 
+.Neo4j has a vibrant community and ecosystem with support for various programming languages and frameworks, making it easier to integrate into existing tech stacks and leverage community-contributed plugins and tools.
+
+
+Tech stacks used:
+
+Using Neo4j, React.js, and Flask for your project involving advisor portfolio management in a bank has several advantages tailored to your requirements:
+
+1. **Neo4j Graph Database**:
+   - **Relationship Management**: Neo4j's graph structure is ideal for modeling and managing relationships between advisors, customers, accounts, and products. This allows for efficient traversal and querying of complex relationships, such as which advisors manage which accounts, which customers are associated with which advisors, and what products are linked to which accounts.
+   - **Flexible Data Model**: With Neo4j's schema-less design, you can easily adapt and evolve your data model as your requirements change over time, which is beneficial in financial applications where regulatory changes or new business needs may necessitate adjustments.
+   - **Performance**: Neo4j's optimized traversal and pathfinding algorithms ensure that queries involving deep relationships are executed efficiently, providing real-time insights into advisor-client relationships and portfolio compositions.
+
+2. **React.js for Frontend**:
+   - **Component-based Architecture**: React's component-based architecture allows you to build modular, reusable UI components. This is advantageous in a complex application like advisor portfolio management, where you can create components for displaying advisor details, customer lists, account summaries, etc., and easily reuse them across different views.
+   - **Efficient Rendering**: React's virtual DOM and efficient rendering mechanism ensure that your application remains responsive even with large datasets and frequent updates, which is crucial for dynamic financial data visualization and interaction.
+   - **Rich Ecosystem**: React has a vast ecosystem of libraries and tools (like Redux for state management, Material-UI for UI components, etc.) that can enhance development speed and maintainability of your frontend application.
+
+3. **Flask for Backend**:
+   - **Python Integration**: Flask, being a lightweight and flexible Python framework, integrates well with Python-based data processing and analytics libraries, which are valuable for handling financial data calculations, analytics, and reporting.
+   - **RESTful APIs**: Flask allows you to easily build RESTful APIs to interact with Neo4j and serve data to your React.js frontend. This separation of concerns (frontend vs backend) enhances scalability and maintainability of your application.
+   - **Security and Scalability**: Flask provides mechanisms for implementing security features such as authentication, authorization, and data validation, crucial for handling sensitive financial data securely. Its scalability allows you to handle increasing user loads and data volumes as your application grows.
+
+4. **Combined Advantages**:
+   - **Real-time Updates**: With Neo4j's real-time querying capabilities and React's efficient rendering, you can provide real-time updates and notifications to advisors about their portfolio changes, customer interactions, and product offerings.
+   - **User Experience**: The combination of Neo4j's data modeling capabilities, React's interactive and responsive UI, and Flask's backend logic ensures a smooth and intuitive user experience, essential for financial advisors managing complex portfolios and client relationships.
+
+Overall, this tech stack combination leverages the strengths of each technology to deliver a robust, scalable, and efficient solution tailored to the complexities of advisor portfolio management in a banking context.
+
+
+A RESTful API is an architectural style for an application programming interface that uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to reading, updating, creating and deleting operations related to resources.
+
+Data Model:
+maximum number of hops done is to be known
+advisor-party link to be noted
+
+
+Entitlement:
+.permissions or rights that define what actions or resources a user or role is allowed to access within the system. 
+.Entitlements play a crucial role in security and access control, ensuring that users only have access to the functionalities and data that they are authorized to use based on their roles or specific permissions.
+
+key aspects:
+1. Access Control: Entitlements determine who can access which parts of the system, such as specific features, data sets, or administrative functions. This helps enforce the principle of least privilege, where users are granted only the permissions necessary to perform their tasks.
+
+2. Permissions: Entitlements define permissions at various levels, such as read, write, execute, delete, etc., for different types of resources within the project. For example, in a banking application, different roles (like advisors, managers, and administrators) may have different permissions to view or modify customer data, manage accounts, or generate reports.
+
+3. Role-based Access Control (RBAC): Often, entitlements are managed through RBAC mechanisms, where roles (such as "Advisor", "Manager", "Administrator") are assigned specific sets of permissions. This simplifies access management and makes it easier to scale as the project grows and more users with different responsibilities are added.
+
+4. Fine-grained Control: Depending on the project's requirements, entitlements can be granular, allowing for precise control over access to individual features or data fields. This granularity ensures that sensitive information is protected and that regulatory requirements (such as GDPR or HIPAA) regarding data access are adhered to.
+
+5. Entitlement Management: Managing entitlements involves defining, assigning, updating, and revoking permissions based on changes in user roles or organizational needs. This process is often facilitated through administrative interfaces or automated systems to ensure consistency and security.
+
+6. Audit and Compliance: Entitlements are also important for auditing and compliance purposes, as they provide a trail of who accessed what data and performed which actions. This audit trail helps in identifying security breaches, unauthorized accesses, or compliance violations.
+
+
+In project:
+1. When a super admin logs in , then all the pages(Dashboard, Advisor Analytics, Advisor Metrics) pages can be accessed and info about any advisor or customer can be seen.
+2. When an advisor logs in , only Dashboard and Analytics pages can be accessed.
+The advisor can see the details of himself and advisors under his expertise(based on product type(doubt)).
+Once logged out, none of the pages can be directly navigated without entering valid id and password.
